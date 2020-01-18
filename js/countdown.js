@@ -1,26 +1,27 @@
 var timer = document.getElementById("timer");
 var start_time = 0
-var end_time = Date.parse('January 19 2020 12:00:00 GMT+0000');
+var end_time = Date.parse('January 18 2020 12:00:00 GMT+0000');
 
 
 function getTimeRemainingText() {
-    var current_time = Date.parse(new Date())
-    var time_remaining = 0
-    not_started = false
+    var current_time = Date.parse(new Date());
+    var time_remaining = 0;
+    not_started = false;
 
     if (start_time == 0) {
-        return "Welcome to Hack Cambridge 101"
+        return "Welcome";
     }
 
-    if (current_time < start_time) {
-        time_remaining = start_time - current_time;
+    if (current_time < start_time - 1) {
+        time_remaining = Math.ceil((start_time - current_time) / 1000);
         not_started = true;
     } else {
-        time_remaining = Math.max(end_time - current_time, 0)
+        time_remaining = Math.ceil(Math.max((end_time - current_time) / 1000, 0))
     }
-    var seconds = Math.floor((time_remaining / 1000) % 60);
-    var minutes = Math.floor((time_remaining / 1000 / 60) % 60);
-    var hours = Math.floor((time_remaining / (1000 * 60 * 60)) % 24);
+
+    var seconds = Math.floor((time_remaining) % 60);
+    var minutes = Math.floor((time_remaining / 60) % 60);
+    var hours = Math.floor((time_remaining / (60 * 60)) % 24);
 
     var string_to_return = hours + "h " + minutes + "m " + seconds + "s ";
 
@@ -35,14 +36,12 @@ function getTimeRemainingText() {
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
-
     let total = 0;
     let lastKeyTime = Date.now();
 
     document.addEventListener('keydown', event => {
         const charList = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        const key = event.keyCode
-
+        const key = event.keyCode;
         const currentTime = Date.now();
 
         if (currentTime - lastKeyTime > 1000) {
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             total = total + 1
             if (total >= 3) {
                 var d = new Date(currentTime);
-                start_time = new Date(d.getTime() + 10000);
+                start_time = new Date(d.getTime() + 5000);
             }
         }
         lastKeyTime = currentTime;

@@ -13,14 +13,15 @@
     color: white;
     margin: 0 auto;
     width: max-content;
-    margin-top: 20rem;
+    margin-top: 14rem;
     font: 5rem "Arvo";
 }
 
 .logo {
     width: 100%;
-    top: 0;
-    left: 0;
+    max-width: 5rem;
+    margin: 0 auto;
+    display: block;
 }
 
 .wrapper {
@@ -32,4 +33,29 @@
   top: 0;
   left: 0;
   width: 100vw;
+}
+
+#timer {
+    width: 100vw;
+    height: 100vh;
+    line-height: 100vh;
+    left: 0;
+    top: 0;
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    font-size: 10rem;
+    text-shadow: 0px 0px 20px #0a0000;
+}
+
+#hashtag {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    font: 1.5rem "Arvo";
+    color: #d4d4d4;
+    margin-bottom: 5rem;
+    text-shadow: 0px 0px 20px #0a0000;
 }

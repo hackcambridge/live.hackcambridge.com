@@ -1,22 +1,22 @@
 'use strict';
 
-const particleCount = 700;
+const particleCount = 800;
 const particlePropCount = 9;
 const particlePropsLength = particleCount * particlePropCount;
-const rangeY = 100;
-const baseTTL = 50;
-const rangeTTL = 150;
-const baseSpeed = 0.1;
-const rangeSpeed = 2;
-const baseRadius = 1;
+const rangeY = 200;
+const baseTTL = 350;
+const rangeTTL = 550;
+const baseSpeed = 0.05;
+const rangeSpeed = 0.25;
+const baseRadius = 3;
 const rangeRadius = 4;
-const baseHue = 220;
+const baseHue = (Date.now() / 300) % 360;
 const rangeHue = 100;
-const noiseSteps = 8;
+const noiseSteps = 5;
 const xOff = 0.00125;
 const yOff = 0.00125;
 const zOff = 0.0005;
-const backgroundColor = 'hsla(260,40%,5%,1)';
+const backgroundColor = '#000'; 
 
 let container;
 let canvas;
@@ -110,7 +110,7 @@ function drawParticle(x, y, x2, y2, life, ttl, radius, hue) {
   ctx.a.save();
   ctx.a.lineCap = 'round';
   ctx.a.lineWidth = radius;
-  ctx.a.strokeStyle = `hsla(${hue},100%,60%,${fadeInOut(life, ttl)})`;
+  ctx.a.strokeStyle = `hsla(${(hue + (Date.now() / 300)) % 360},100%,60%,${fadeInOut(life, ttl)})`;
   ctx.a.beginPath();
   ctx.a.moveTo(x, y);
   ctx.a.lineTo(x2, y2);
