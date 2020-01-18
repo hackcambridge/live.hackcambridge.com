@@ -1,6 +1,6 @@
 var timer = document.getElementById("timer");
 var start_time = 0
-var end_time = Date.parse('January 18 2020 12:00:00 GMT+0000');
+var end_time = Date.parse('January 19 2020 12:00:00 GMT+0000');
 
 
 function getTimeRemainingText() {
