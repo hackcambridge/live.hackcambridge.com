@@ -158,19 +158,6 @@ a:focus {
 	align-items: center;
 }
 
-.content__title {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	margin: -5.5vw 0 0 0;
-	z-index: 100;
-	font-size: 10vw;
-	color: var(--color-title);
-	line-height: 1;
-}
-
 @media screen and (min-width: 53em) {
 	.message {
 		display: none;
